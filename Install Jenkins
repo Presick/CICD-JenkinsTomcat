@@ -1,0 +1,38 @@
+# Installing Jenkins on RHEL 7/8, CentOS 7/8 or Amazon Linux OS
+
+# Set the time and hostname
+
+sudo timedatectl set-timezone America/New_York
+sudo hostnamectl set-hostname jenkins
+
+# install pre requisites
+
+sudo yum install wget -y
+
+# Import Jenkins
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+# Update the system
+sudo yum upgrade -y
+
+# Add required dependencies for the jenkins package and reload
+
+sudo yum install java-11-openjdk -y
+sudo yum install jenkins -y
+sudo systemctl daemon-reload
+
+# Start Jenkins
+# You can enable the Jenkins service to start at boot with the command:
+
+sudo systemctl enable jenkins
+
+#You can start the Jenkins service with the command:
+
+sudo systemctl start jenkins
+
+# You can check the status of the Jenkins service using the command:
+sudo systemctl status jenkins
+
