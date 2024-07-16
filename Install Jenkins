@@ -5,9 +5,9 @@
 sudo timedatectl set-timezone America/New_York
 sudo hostnamectl set-hostname jenkins
 
-# install pre requisites
+# install pre requisites ( Make sure to install git cli since it will be use to pull the code from the SCM)
 
-sudo yum install wget -y
+sudo yum install wget git -y
 
 # Import Jenkins
 
