@@ -1,32 +1,34 @@
-# Maven-Installation
-Apache Maven Installation And Setup In AWS EC2 Redhat Instance.
-Prerequisite
-AWS Acccount.
-Create Security Group and open Required ports.
-22 ..etc
-Create Redhat EC2 T2.medium Instance with 4GB of RAM.
-Attach Security Group to EC2 Instance.
-Install java openJDK 1.8+
-Install Java JDK 1.8+ and other softares (GIT, wget and tree)
-# install Java JDK 1.8+ as a pre-requisit for maven to run.
+## PROJECT
 
-sudo hostnamectl set-hostname maven
-sudo su - ec2-user
-cd /opt
-sudo yum install wget nano tree unzip git-all -y
-sudo yum install java-11-openjdk-devel java-1.8.0-openjdk-devel -y
-java -version
-git --version
-2. Download, extract and Install Maven
-#Step1) Download the Maven Software
-sudo wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.zip
-sudo unzip apache-maven-3.8.6-bin.zip
-sudo rm -rf apache-maven-3.8.6-bin.zip
-sudo mv apache-maven-3.8.6/ maven
-.#Step3) Set Environmental Variable - For Specific User eg ec2-user
-vi ~/.bash_profile  # and add the lines below
-export M2_HOME=/opt/maven
-export PATH=$PATH:$M2_HOME/bin
-.#Step4) Refresh the profile file and Verify if maven is running
-source ~/.bash_profile
-mvn -version
+##### Context
+We have been tasked by a company called Landmark Technology to build a CI CD ( Continuous Integration Continuous Deployment) pipeline fro their holiday sales as their offers change quickly based on the demand. They want to be able to publish new offer quickly. 
+
+##### Tools
++ AWS
++ Jenkins CE
++ SCM (git/github)
++ Maven plugin
++ SonarQube
++ Nexus
++ Apache Tomcat
+##### Infrastructure
++ Cloud provider account: in our case AWS
++ 4 EC2 server t2.medium OS RHEL 7/8
++ Create security group and open port 22, 8080, 8081, 9000 which are the port we will be using for this project
++ Bind servers to that security group
+
+ ![image](https://github.com/user-attachments/assets/085d267b-0d4a-4ec0-8caf-02ec4baab498)
+ 
+
+  ![image](https://github.com/user-attachments/assets/6c109e1b-7ecd-4ce3-b280-b9dca43e8034)
+
+  ![image](https://github.com/user-attachments/assets/6d424081-e4a5-4e8e-9f2e-7a563a494e84)
+
+##### WORFLOW
+
+##### description
++ Once the developer commit the code and once this one is merged to the main branch, a build is triggered on Jenkins via webhook
++ The artefact is successively built( Maven), analyzed for quality 9 SonarQube) then deployed to production ( Apache- Tomcat) while a copy of the .war file is stored in Nexus.
++ Notifications are sent to the DevOps team via Email/SMS/Slack
+  
+
