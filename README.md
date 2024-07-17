@@ -35,6 +35,8 @@ We have been tasked by a company called Landmark Technology to build a CI CD ( C
 
 ##### step 1 create the project on Jenkins dashboard
 On Jenkins dashboard: + NewItem - Name the project ( Landmark-project) - Select Freestyle Project - click OK
+![image](https://github.com/user-attachments/assets/56c3cb2a-79f0-4539-91a9-2e3f7711083f)
+
 
 ##### step 2 Jenkins - Git integration + Webhook configuration
 From the project dashboard in Jenkins go to Configuration - Source Code Management
@@ -43,3 +45,35 @@ From the project dashboard in Jenkins go to Configuration - Source Code Manageme
 
 Go to the project repository on Github - Settings - Webhook
 ![image](https://github.com/user-attachments/assets/f456ab99-e03e-49cf-a324-99ddbb7b54a8)
+
+##### step 3 Jenkins - maven, SonarQube and Nexus configuration
+
+From the project configuration page
+![image](https://github.com/user-attachments/assets/7ab9e2ae-fcc3-4dc1-b3a6-9fa0a10c04cb)
+
+
+##### step 4 Jenkins - Tomcat Integration
+
+install Deploy to container Plugin
+![image](https://github.com/user-attachments/assets/e0f27653-2754-4279-ba6e-8f7416a9cefe)
+
+Configure the project to deploy on Tomcat
+![image](https://github.com/user-attachments/assets/34adbedd-e78d-47e6-8476-ea4b7f2d435d)
+
+##### step 5 Jenkins notification configuration
+from Jenkins dashboard go to: Manage Jenkins - System - E-mail Notification. ( Prior to that make sure to install the Email Extension Plugin)
+![image](https://github.com/user-attachments/assets/b6d8af6d-3d1f-4c44-ad5f-9545698e0079)
+
+
+![image](https://github.com/user-attachments/assets/e80fcadb-6eb1-4972-97ad-71aa6c818e9e)
+
+##### Deployment
+![image](https://github.com/user-attachments/assets/16eb274c-edf8-44c4-a345-fd18a567cd2e)
+![image](https://github.com/user-attachments/assets/4bccf556-2700-4139-a113-aee479121ce6)
+![image](https://github.com/user-attachments/assets/f04f528c-433f-4720-ba87-5c35b8371520)
+
+
+## REFERENCE LINK
+Project Github repository
+
+https://github.com/Presick/maven-web-application
