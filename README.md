@@ -26,9 +26,20 @@ We have been tasked by a company called Landmark Technology to build a CI CD ( C
 
 ##### WORFLOW
 
+![image](https://github.com/user-attachments/assets/905f6c4d-c29b-4b2e-9449-9f2dd81ba2f1)
+
 ##### description
 + Once the developer commit the code and once this one is merged to the main branch, a build is triggered on Jenkins via webhook
 + The artefact is successively built( Maven), analyzed for quality 9 SonarQube) then deployed to production ( Apache- Tomcat) while a copy of the .war file is stored in Nexus.
 + Notifications are sent to the DevOps team via Email/SMS/Slack
-  
 
+##### step 1 create the project on Jenkins dashboard
+On Jenkins dashboard: + NewItem - Name the project ( Landmark-project) - Select Freestyle Project - click OK
+
+##### step 2 Jenkins - Git integration + Webhook configuration
+From the project dashboard in Jenkins go to Configuration - Source Code Management
+
+![image](https://github.com/user-attachments/assets/632a0f2a-f797-4a20-86f7-83ff0bec7073)
+
+Go to the project repository on Github - Settings - Webhook
+![image](https://github.com/user-attachments/assets/f456ab99-e03e-49cf-a324-99ddbb7b54a8)
