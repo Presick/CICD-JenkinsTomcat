@@ -1,7 +1,7 @@
 ## PROJECT
 
 ##### Context
-We have been tasked by a company called Landmark Technology to build a CI CD ( Continuous Integration Continuous Deployment) pipeline fro their holiday sales as their offers change quickly based on the demand. They want to be able to publish new offer quickly. 
+We have been tasked by a company called Landmark Technology to build a CI CD ( Continuous Integration Continuous Deployment) pipeline for their holiday sales as their offers change quickly based on the demand. They want to be able to publish new offer quickly. 
 
 ##### Tools
 + AWS
